@@ -1,7 +1,7 @@
 
 {
   "cli": {
-    "version": ">= 0.38.3"
+    "version": ">= 5.9.1"
   },
   "build": {
     "development": {
@@ -9,11 +9,22 @@
       "distribution": "internal"
     },
     "preview": {
-      "distribution": "internal"
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      }
     },
-    "production": {}
+    "production": {
+      "android": {
+        "gradleCommand": ":app:bundleRelease"
+      }
+    }
   },
   "submit": {
-    "production": {}
+    "production": {
+      "android": {
+        "serviceAccountKeyPath": "path/to/google-play-service-account.json"
+      }
+    }
   }
 }
