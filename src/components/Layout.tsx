@@ -33,12 +33,12 @@ const Layout = () => {
   return (
     <div className="flex flex-col min-h-screen bg-background">
       {/* Main Content */}
-      <main className="flex-1 pb-16 pt-4">
+      <main className="flex-1 pb-16 pt-4 px-4 overflow-y-auto">
         <Outlet />
       </main>
       
       {/* Bottom Navigation Bar - Mobile Friendly */}
-      <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 py-2 px-4 flex justify-around items-center z-10">
+      <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 py-2 px-4 flex justify-around items-center z-10 safe-area-bottom">
         {navItems.map((item) => {
           const isActive = location.pathname === item.path;
           const Icon = item.icon;
