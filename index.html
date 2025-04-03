@@ -7,21 +7,98 @@
     <title>Find my Documents</title>
     <meta name="description" content="Securely store, manage and recover your important documents" />
     <meta name="author" content="Lovable" />
-
-    <meta property="og:title" content="Find my Documents" />
-    <meta property="og:description" content="Securely store, manage and recover your important documents" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   </head>
-
   <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
+    <div id="app">
+      <!-- Main Content -->
+      <main class="main-content">
+        <div class="container">
+          <section class="hero-section">
+            <h1>Find my Documents</h1>
+            <p class="subtitle">Securely store, manage and recover your important documents</p>
+            
+            <div class="button-group">
+              <button class="btn btn-primary" id="documents-btn">My Documents</button>
+              <button class="btn btn-outline" id="find-btn">Lost & Found</button>
+            </div>
+          </section>
+
+          <section class="recent-documents">
+            <div class="section-header">
+              <h2>Recent Documents</h2>
+              <a href="#" class="view-all">View All</a>
+            </div>
+            
+            <div class="documents-grid" id="recent-docs-container">
+              <!-- Documents will be added here by JavaScript -->
+            </div>
+          </section>
+
+          <section class="features">
+            <h2>Why Use Find my Documents?</h2>
+            <div class="features-grid">
+              <div class="feature-card">
+                <div class="icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Secure Storage</h3>
+                <p>End-to-end encrypted document storage</p>
+              </div>
+              <div class="feature-card">
+                <div class="icon"><i class="fas fa-upload"></i></div>
+                <h3>Easy Upload</h3>
+                <p>Quickly add your important documents</p>
+              </div>
+              <div class="feature-card">
+                <div class="icon"><i class="fas fa-search"></i></div>
+                <h3>Find Lost Docs</h3>
+                <p>Post about lost documents or help others</p>
+              </div>
+              <div class="feature-card">
+                <div class="icon"><i class="fas fa-bell"></i></div>
+                <h3>Expiry Alerts</h3>
+                <p>Get notified before your documents expire</p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+      
+      <!-- Bottom Navigation Bar -->
+      <nav class="bottom-nav">
+        <a href="#" class="nav-item active">
+          <i class="fas fa-home"></i>
+          <span>Home</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i class="fas fa-file-alt"></i>
+          <span>My Docs</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i class="fas fa-search"></i>
+          <span>Find</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i class="fas fa-bell"></i>
+          <span>Alerts</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i class="fas fa-user"></i>
+          <span>Profile</span>
+        </a>
+      </nav>
+
+      <!-- Toast Notification -->
+      <div class="toast" id="toast">
+        <div class="toast-content">
+          <div class="toast-title">Document expiring soon</div>
+          <div class="toast-description">Your Passport expires in 30 days</div>
+        </div>
+        <button class="toast-close" id="toast-close">&times;</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
